@@ -71916,11 +71916,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kalex\\OneDrive - NC\\PROG1442 Mobile\\RandomProfile\\RandomProfileMAUI\\RandomProfileMAUI.csproj",
+      "projectUniqueName": "C:\\Users\\kalex\\OneDrive - NC\\Winter 2023\\PROG1442 Mobile\\RandomProfile\\RandomProfileMAUI\\RandomProfileMAUI.csproj",
       "projectName": "RandomProfileMAUI",
-      "projectPath": "C:\\Users\\kalex\\OneDrive - NC\\PROG1442 Mobile\\RandomProfile\\RandomProfileMAUI\\RandomProfileMAUI.csproj",
+      "projectPath": "C:\\Users\\kalex\\OneDrive - NC\\Winter 2023\\PROG1442 Mobile\\RandomProfile\\RandomProfileMAUI\\RandomProfileMAUI.csproj",
       "packagesPath": "C:\\Users\\kalex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kalex\\OneDrive - NC\\PROG1442 Mobile\\RandomProfile\\RandomProfileMAUI\\obj\\",
+      "outputPath": "C:\\Users\\kalex\\OneDrive - NC\\Winter 2023\\PROG1442 Mobile\\RandomProfile\\RandomProfileMAUI\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
