@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:RandomProfileMAUI.ViewModels;assembly=RandomProfileMAUI"
+             x:Class="RandomProfileMAUI.Views.ProfileDetailedPage"
+             Title="Profile Detailed Page">
+    
+    <ContentPage.BindingContext>
+        <viewModels:ProfileViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding NewCommand}" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+    </ContentPage.ToolbarItems>
+    
+    <VerticalStackLayout>
+        <Label Text="{Binding Profile.FullName}" FontAttributes="Bold" FontSize="Large" />
+        <Image Source="{Binding Profile.ProfileImage.ImageUrl}" HeightRequest="200" />
+        <Label Text="{Binding Profile.Bio}" />
+        <Label Text="{Binding Profile.NickName}" FontAttributes="Bold" />
+        <Label Text="{Binding Profile.DOB, StringFormat='Born {0:d}'}" />
+    </VerticalStackLayout>
+</ContentPage>

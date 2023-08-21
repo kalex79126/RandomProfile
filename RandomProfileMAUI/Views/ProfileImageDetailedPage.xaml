@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:RandomProfileMAUI.ViewModels;assembly=RandomProfileMAUI"             
+             x:Class="RandomProfileMAUI.Views.ProfileImageDetailedPage"
+             Title="Profile Image Detailed Page">
+
+    <ContentPage.BindingContext>
+        <viewModels:ProfileImageViewModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout>
+        <Label Text="{Binding ProfileImage.Name}" FontAttributes="Bold" />
+            <Image Source="{Binding ProfileImage.ProfileImageBytes}" />
+            <Label Text="{Binding ProfileImage.Description}" />
+    </VerticalStackLayout>
+</ContentPage>

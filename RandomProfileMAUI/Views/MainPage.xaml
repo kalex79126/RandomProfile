@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:m="clr-namespace:RandomProfileMAUI.Models"             
+             xmlns:viewModels="clr-namespace:RandomProfileMAUI.ViewModels;assembly=RandomProfileMAUI"                          
+             x:Class="RandomProfileMAUI.Views.MainPage"
+             Title="Main Page">
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding NewCommand}" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, *"
+              ColumnDefinitions="Auto, *"
+              Padding="10"
+              RowSpacing="10"
+              ColumnSpacing="10">
+            <Label Text="Filter by Profile Image" 
+                   Grid.Column="0"
+                   Margin="10"
+                   VerticalOptions="Center" />
+            <Picker x:Name="ddlProfileImage"  Grid.Column="1" 
+                    VerticalOptions="Center"
+                    ItemsSource="{Binding ProfileImages}"
+                    ItemDisplayBinding="{Binding SelectedProfileImage}" 
+                    SelectedIndexChanged="ddlProfileImage_SelectedIndexChanged">
+            </Picker>
+            <ActivityIndicator x:Name="Loading" Grid.Row="1" Grid.ColumnSpan="2" 
+                    HeightRequest="100" WidthRequest="100" IsRunning="true" />
+            <CollectionView x:Name="profileCollection" x:FieldModifier="internal"
+                    ItemsSource="{Binding AllNotes}"
+                    Margin="20"
+                    SelectionMode="Single"
+                    SelectionChangedCommand="{Binding NewCommand}"
+                    SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
+                <!-- Designate how the collection of items are laid out -->
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <!-- Define the appearance of each item in the list -->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Text}" FontSize="22"/>
+                            <Label Text="{Binding Date}" FontSize="14" TextColor="Silver"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
